@@ -27,9 +27,6 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
     },
     ssr: false
   })
-
-  tick(data?.product?.releaseDate || DEFAULT_TARGET_DATE, setTime)
-
   if (loading) {
     return (
       <div>
@@ -44,6 +41,8 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({}) => {
       </div>
     )
   }
+
+  tick(data?.product?.releaseDate || DEFAULT_TARGET_DATE, setTime)
 
   return (
     <div className={`${handles.container} t-heading-2 fw3 w-100 c-muted-1`}>
